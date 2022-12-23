@@ -19,3 +19,6 @@ group members :
 
 
 20101492	Shad Been Sharif Sami 
+
+
+Used dataset : https://www.kaggle.com/datasets/kedarsai/indian-license-plates-with-labels
