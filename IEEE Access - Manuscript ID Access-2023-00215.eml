@@ -1,0 +1,90 @@
+Delivered-To: shad.been.sharif@g.bracu.ac.bd
+Received: by 2002:a2e:820b:0:0:0:0:0 with SMTP id w11csp1285413ljg;
+        Tue, 3 Jan 2023 10:47:32 -0800 (PST)
+X-Google-Smtp-Source: AMrXdXtgy1qkbtR28dacxVQbXGJsQyBWa2aMoihrxddKOfm5YTz5rcJwFtg5Xgfuk5OT0ByVD9oh
+X-Received: by 2002:a17:902:8c8b:b0:189:c536:c745 with SMTP id t11-20020a1709028c8b00b00189c536c745mr48763354plo.2.1672771652182;
+        Tue, 03 Jan 2023 10:47:32 -0800 (PST)
+ARC-Seal: i=1; a=rsa-sha256; t=1672771652; cv=none;
+        d=google.com; s=arc-20160816;
+        b=qtlHxN2OENNV6R7mkzhQKx5mFZojkmXfkZZJj1D3sGogxM+hWiyeEUDQL/o3vL7LnM
+         Esjtx7n2BypSLEKEWOrrzfTbATT4VUZKfHCZ55D96SmGDBiHV+HyDtcJcbGZ5GiYe7n+
+         WIy+zD2PkvopkDq1yEndVyZdiOO/sWuR5KF3b77W6oh5TmzC1EXKT9MX/cn+Q2m+u+Xp
+         4tnOmiLXUz5VE058WY1cQCxAva6FxwbMEIcngDBSBef64FBk92hb9Fu5x1ecpSthmOXc
+         eDqxHi3BLokqqmniEgV/q4ABui0I1S3uMb8Qd3D/gRXyvzBwrNmqSM9yp6h9cynjzH8j
+         EFhg==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=feedback-id:content-transfer-encoding:mime-version:subject
+         :message-id:to:reply-to:from:date:dkim-signature:dkim-signature;
+        bh=n3w1gENsvloMP4Nawbj7nf1/q5ytIWWAZx3KujgxoFs=;
+        b=fd4uF8ntaLLArzC70hW1xAI0yxzBIvhgsbAF+ChDA0QA/Pfs41XzQ3IbIl6Smnhmsb
+         02S7qWtRtZUxieplS6swzGl3Dg6dw7uQZl3WIEAwgI25wAXfTTqr0pI+koSZuSwS/nGn
+         FvxCTWkr32cE7LdVnhBFLxOLNRUGFD/52vOj5QI1xA/r5nbqxixxFem/wtKU9ThitFqu
+         dfZAieVoubEJaYlqn5nvRbS0ZwIRcoGmrUL2wa32WgWJlGt/F92ovdCTTRQ2utxWXl+W
+         jmR37zTY+vzuyPSQiqAcW8DWAtpc6uWjtmJzqCCLHXk6FruUUd4JtfDYanfb0Khei8DO
+         PcNA==
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@manuscriptcentral.com header.s=6jaj7kuckl7yb52caon555zdwrgdb4r6 header.b=hZJkHM0n;
+       dkim=pass header.i=@amazonses.com header.s=gdwg2y3kokkkj5a55z2ilkup5wp5hhxx header.b=cxRJit00;
+       spf=pass (google.com: domain of 0101018578f5c2ed-9938fdd8-d41b-46ee-af0c-a1fac97e892f-000000@outbound.manuscriptcentral.com designates 54.240.27.66 as permitted sender) smtp.mailfrom=0101018578f5c2ed-9938fdd8-d41b-46ee-af0c-a1fac97e892f-000000@outbound.manuscriptcentral.com;
+       dmarc=pass (p=QUARANTINE sp=QUARANTINE dis=NONE) header.from=manuscriptcentral.com
+Return-Path: <0101018578f5c2ed-9938fdd8-d41b-46ee-af0c-a1fac97e892f-000000@outbound.manuscriptcentral.com>
+Received: from a27-66.smtp-out.us-west-2.amazonses.com (a27-66.smtp-out.us-west-2.amazonses.com. [54.240.27.66])
+        by mx.google.com with ESMTPS id u9-20020a170902b28900b00186a8bd137fsi31869421plr.453.2023.01.03.10.47.31
+        (version=TLS1_2 cipher=ECDHE-ECDSA-AES128-GCM-SHA256 bits=128/128);
+        Tue, 03 Jan 2023 10:47:32 -0800 (PST)
+Received-SPF: pass (google.com: domain of 0101018578f5c2ed-9938fdd8-d41b-46ee-af0c-a1fac97e892f-000000@outbound.manuscriptcentral.com designates 54.240.27.66 as permitted sender) client-ip=54.240.27.66;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@manuscriptcentral.com header.s=6jaj7kuckl7yb52caon555zdwrgdb4r6 header.b=hZJkHM0n;
+       dkim=pass header.i=@amazonses.com header.s=gdwg2y3kokkkj5a55z2ilkup5wp5hhxx header.b=cxRJit00;
+       spf=pass (google.com: domain of 0101018578f5c2ed-9938fdd8-d41b-46ee-af0c-a1fac97e892f-000000@outbound.manuscriptcentral.com designates 54.240.27.66 as permitted sender) smtp.mailfrom=0101018578f5c2ed-9938fdd8-d41b-46ee-af0c-a1fac97e892f-000000@outbound.manuscriptcentral.com;
+       dmarc=pass (p=QUARANTINE sp=QUARANTINE dis=NONE) header.from=manuscriptcentral.com
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/simple;
+	s=6jaj7kuckl7yb52caon555zdwrgdb4r6; d=manuscriptcentral.com;
+	t=1672771650;
+	h=Date:From:Reply-To:To:Message-ID:Subject:MIME-Version:Content-Type:Content-Transfer-Encoding;
+	bh=n3w1gENsvloMP4Nawbj7nf1/q5ytIWWAZx3KujgxoFs=;
+	b=hZJkHM0nUj/uvJJ12uxdXLw1qRCTUBILJ/l5Oykvklwvea+5TBbHFANK279alwQe
+	c61cbnVStJsYBYgBQ2I1NIvUfaqwo1JulLxRxy7W+d58u5EZSXeZrFR5G/wnZjU0XnF
+	DFuCroPLW2XAOqYxEIKIg3QfgxUhrjRVebmaE36w=
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/simple;
+	s=gdwg2y3kokkkj5a55z2ilkup5wp5hhxx; d=amazonses.com; t=1672771650;
+	h=Date:From:Reply-To:To:Message-ID:Subject:MIME-Version:Content-Type:Content-Transfer-Encoding:Feedback-ID;
+	bh=n3w1gENsvloMP4Nawbj7nf1/q5ytIWWAZx3KujgxoFs=;
+	b=cxRJit00hXvAasN3shnSqZaeczpnxh7XkEAxS6SqV4Bh+HmLYuk/aBW0sEPtaFQv
+	qbyz69YF/Lr0w1jZuG+zbsP9DafvWKztNzTbtGClrtmPPtv409Synd918XNZZMuYebH
+	V57n6dGPEaehCDF44Sd75+zjd09mdQQhVXLq5i+0=
+Date: Tue, 3 Jan 2023 18:47:30 +0000
+From: IEEE Access <onbehalfof@manuscriptcentral.com>
+Reply-To: ieeeaccess@ieee.org
+To: shad.been.sharif@g.bracu.ac.bd, tasfia.jahan.nahin@g.bracu.ac.bd,
+	shihab.sharar@g.bracu.ac.bd, annajiat@bracu.ac.bd,
+	humaion.kabir.mehedi@g.bracu.ac.bd, md.mustakin.alam@g.bracu.ac.bd
+Message-ID: <0101018578f5c2ed-9938fdd8-d41b-46ee-af0c-a1fac97e892f-000000@us-west-2.amazonses.com>
+Subject: IEEE Access - Manuscript ID Access-2023-00215
+MIME-Version: 1.0
+Content-Type: text/html; charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+X-SID: 1
+X-PRODUCT: s1m
+X-ENV-TYPE: prod
+X-ENV-NAME: 4280
+X-S1Info: xik_2awip8hkfLTECWJAWvz2MnBW8wd3t4Huz3yKTUy6GXb6n9oqjhwhcnAqZLVrEVZDUr
+Feedback-ID: 1.us-west-2.y8789kd/oyDlGffYrP88IUZ2JiqaxJLDOSJ1+/ZSPI4=:AmazonSES
+X-SES-Outgoing: 2023.01.03-54.240.27.66
+
+03-Jan-2023<br /><br />Dear Mr. Sami:<br /><br />Your manuscript entitled "=
+Number Plate Recognition of Indian Cars Using OCR" has been successfully su=
+bmitted online and is presently being given full consideration for publicat=
+ion in IEEE <em>Access</em>.<br /><br />As a reminder, IEEE <em>Access</em>=
+ is a fully open access journal. Open Access provides unrestricted access t=
+o published articles via IEEE <em>Xplore</em>. In lieu of paid subscription=
+s, authors are required to pay an article processing charge of $1,950 (plus=
+ applicable local taxes) after the article has been accepted for publicatio=
+n.<br /><br />Your manuscript ID is Access-2023-00215. =C2=A0Please mention=
+ the manuscript ID in all future correspondence to the IEEE <em>Access</em>=
+ Editorial Office. Submitting authors can also view the manuscript status a=
+t any time by checking their author dashboard on the <a href=3D"https://iee=
+e.atyponrex.com/journal/ieee-access" target=3D"_blank">IEEE Author Portal</=
+a>.<br /><br />Thank you again for submitting your manuscript to IEEE <em>A=
+ccess</em>.<br /><br />Sincerely,<br /><br />IEEE <em>Access</em> Editorial=
+ Office
